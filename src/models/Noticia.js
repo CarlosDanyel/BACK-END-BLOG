@@ -5,7 +5,8 @@ const noticiaSchema = new mongoose.Schema(
         id: mongoose.SchemaTypes.ObjectId,
         titulo: { type: String, required: true },
         descricao: { type: String, required: true },
-        data: { type: String, required: true }
+        src: { type: String},
+        data: { type: Date}
     }
 );
 

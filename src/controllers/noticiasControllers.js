@@ -25,9 +25,19 @@ class NoticiasController {
 
     static cadastrarNoticia = async (req, res) => {
         try {
-            let livro = new noticia(req.body);
-            await livro.save();
-            res.status(201).send(livro.toJSON());
+            const {id, titulo, descricao, data} = req.body;
+
+            const file = req.file; 
+
+            const newNoticia = new noticia({
+                id,
+                titulo,
+                descricao,
+                data,
+                src: file.path,
+            })
+            await newNoticia.save();
+            res.status(201).send(newNoticia.toJSON());
         } catch (error) {
             res.status(501).send({ message: `${error.message} - erro ao cadastrar livro` }
             )
