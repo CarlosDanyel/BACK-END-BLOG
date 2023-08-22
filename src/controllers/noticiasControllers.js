@@ -34,7 +34,7 @@ class NoticiasController {
                 titulo,
                 descricao,
                 data,
-                src: file.path,
+                src: file.filename,
             })
             await newNoticia.save();
             res.status(201).send(newNoticia.toJSON());
