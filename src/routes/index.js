@@ -1,5 +1,5 @@
 import express from "express";
-// import noticias from "./noticiasRoutes.js"
+import noticias from "./noticiasRoutes.js";
 import cors from "cors";
 import path from "path";
 
